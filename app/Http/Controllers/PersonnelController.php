@@ -44,6 +44,8 @@ class PersonnelController extends Controller
     {
         $personnel = new Personnel();
         $personnel->name = $request->name;
+        $personnel->email = $request->email;
+        $personnel->details = $request->details;
 
         if ($personnel->save()) {
             return new PersonnelResource($personnel);
@@ -83,6 +85,8 @@ class PersonnelController extends Controller
     {
         $personnel = Personnel::findOrFail($id);
         $personnel->name = $request->name;
+        $personnel->email = $request->email;
+        $personnel->details = $request->details;
 
         if ($personnel->save()) {
             return new PersonnelResource($personnel);
