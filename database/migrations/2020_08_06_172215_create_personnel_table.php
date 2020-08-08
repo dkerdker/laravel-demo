@@ -19,8 +19,6 @@ class CreatePersonnelTable extends Migration
             $table->string('email')->unique();
             $table->longText('details')->nullable();
             $table->timestamp('change_timestamp')->nullable();
-            $table->string('change_type')->unique();
-            $table->rememberToken();
             $table->timestamps();
         });
     }
