@@ -21,12 +21,14 @@ use Illuminate\Support\Facades\Route;
 Route::post('/login', 'LoginController@login');
 Route::post('/register', 'RegisterController@register');
 Route::post('/logout', 'LoginController@logout')->middleware('auth:api');
-
 //API with Validation
 Route::middleware('auth:api')->group(function () {
     Route::get('/user', function (Request $request) {
         return $request->user();
     });
+
+    Route::post('/import', 'FileImportController@store');
+    
+    Route::resource('personnels', 'PersonnelController');
 });
 
-Route::resource('personnels', 'PersonnelController');
