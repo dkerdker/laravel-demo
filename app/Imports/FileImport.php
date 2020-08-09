@@ -5,13 +5,12 @@ namespace App\Imports;
 use App\Personnel;
 use Maatwebsite\Excel\Concerns\Importable;
 use Maatwebsite\Excel\Concerns\ToModel;
-use Maatwebsite\Excel\Concerns\SkipsOnError;
 use Maatwebsite\Excel\Concerns\WithHeadingRow;
 use Throwable;
 
-class FileImport implements ToModel, WithHeadingRow, SkipsOnError
+class FileImport implements ToModel, WithHeadingRow
 {
-    use Importable, SkipsErrors;
+    use Importable;
     /**
     * @param array $row
     *
