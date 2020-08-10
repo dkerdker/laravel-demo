@@ -28,7 +28,9 @@ Route::middleware('auth:api')->group(function () {
     });
 
     Route::post('/import', 'FileImportController@store');
+    Route::post('/importTxt', 'FileImportController@storeTxt');
     
     Route::resource('personnels', 'PersonnelController');
+    Route::post('/search', 'SearchController@search');
 });
 

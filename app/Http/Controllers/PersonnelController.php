@@ -17,7 +17,7 @@ class PersonnelController extends Controller
     {
         // get personnel
         //$personnels = Personnel::all();
-        $personnels = Personnel::select('id', 'name', 'email', 'details')->get();
+        $personnels = Personnel::select('id', 'name', 'email', 'details')->latest()->paginate(5);
 
         // return collection of personnels as a resource
         return PersonnelResource::collection($personnels);

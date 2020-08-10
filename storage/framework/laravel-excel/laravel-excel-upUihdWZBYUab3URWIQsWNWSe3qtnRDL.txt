@@ -1,0 +1,9 @@
+Testman
+testman@example.net
+He is a man
+Testwoman
+testwoman@example.net
+She is a woman
+Testrobot
+testrobot@example.net
+It is a robot
